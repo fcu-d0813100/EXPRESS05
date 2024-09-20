@@ -1,14 +1,14 @@
 const express = require("express");
 const app = express();
 
-const { singer } = require("./singers.json");
-console.log(singer);
+const { singers } = require("./singers.json");
+console.log(singers);
 app.get("/", (req, res) => {
   res.send("首頁");
 });
 app.get("/singer/:id.html", (req, res) => {
   const { id } = req.params;
-  const result = singer.find((singer) => {
+  const result = singers.find((singer) => {
     if (singer.id == id) {
       return true;
     }
